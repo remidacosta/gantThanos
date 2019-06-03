@@ -17,6 +17,22 @@
             <td>{{ $personne->getNationalite() }}</td>
             <td>{{ $personne->getEtat() }}</td>
             <td>{{ $personne->getSexe() }}</td>
+
+            <td>
+                {!! Form::open(['url' => '']) !!}
+                {!! Form::submit('Modifier', ['class' => 'btn btn-info pull-right']) !!}
+                {!! Form::close() !!}
+            </td>
+
+            <td>
+                {!! Form::open(['url' => '']) !!}
+                {!! Form::submit('Supprimer', ['class' => 'btn btn-info pull-right']) !!}
+                {!! Form::close() !!}
+            </td>
+
         </tr>
     @endforeach
+    {!! Form::open(['url' => 'ajoutPersonne']) !!}
+    {!! Form::submit('Ajouter', ['class' => 'btn btn-info pull-right']) !!}
+    {!! Form::close() !!}
 </table>
