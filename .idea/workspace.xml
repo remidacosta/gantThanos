@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="326167bf-841c-4bc9-a98a-bc7ab110e961" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PersonneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Metier/Personne.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Metier/Personne.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Modeles/PersonneDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modeles/PersonneDAO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/personne.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/personne.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/listePersonnes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/listePersonnes.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PersonneController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="33" column="53" lean-forward="true" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="452">
+              <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
               <folding>
                 <element signature="e#39#82#0#PHP" expanded="true" />
               </folding>
@@ -61,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Modeles/PersonneDAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+            <state relative-caret-position="750">
+              <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
               <folding>
                 <element signature="e#30#37#0#PHP" expanded="true" />
               </folding>
@@ -116,10 +111,10 @@
         <option value="$PROJECT_DIR$/app/Modeles/DAO.php" />
         <option value="$PROJECT_DIR$/resources/views/saisiePersonne.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/InsertionConfRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PersonneController.php" />
         <option value="$PROJECT_DIR$/resources/views/listePersonnes.blade.php" />
         <option value="$PROJECT_DIR$/app/Metier/Personne.php" />
         <option value="$PROJECT_DIR$/app/Modeles/PersonneDAO.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PersonneController.php" />
       </list>
     </option>
   </component>
@@ -311,12 +306,12 @@
       <workItem from="1558442343148" duration="6676000" />
       <workItem from="1558985077925" duration="417000" />
       <workItem from="1559562438679" duration="9301000" />
-      <workItem from="1559573490969" duration="1514000" />
+      <workItem from="1559573490969" duration="2222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18029000" />
+    <option name="totallyTimeSpent" value="18737000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,16 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PersonneController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="33" column="53" lean-forward="true" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-          <folding>
-            <element signature="e#39#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/listePersonnes.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -483,10 +468,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Modeles/PersonneDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        <state relative-caret-position="750">
+          <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
           <folding>
             <element signature="e#30#37#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PersonneController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+          <folding>
+            <element signature="e#39#82#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

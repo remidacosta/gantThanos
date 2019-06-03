@@ -36,12 +36,18 @@ class PersonneController extends Controller
         $unePersonne->setDateNaissance($request->input('DateNaissance'));
         $unePersonne->setEtat($this->snap());
 
-        $maPersonne->creationPersonne($unePersonne);
+
+        if(!$maPersonne->verifDoublon($unePersonne))
+        {
+            $maPersonne->creationPersonne($unePersonne);
+        }
+
 
         $lesPersonnes = $maPersonne->getLesPersonnes();
 
         return view('listePersonnes', compact( 'lesPersonnes'));
     }
+
 
     private function snap()
     {

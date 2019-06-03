@@ -43,6 +43,24 @@ class PersonneDAO extends DAO
         return $maPersonne;
     }
 
+    public function verifDoublon(Personne $unepersonne)
+    {
+        $lesPersonnes = $this->getLesPersonnes();
+        foreach($lesPersonnes as $autrepersonne)
+        {
+            if( $unepersonne->getNom() == $autrepersonne->getNom() &&
+                $unepersonne->getPrenom() == $autrepersonne->getPrenom() &&
+                $unepersonne->getDateNaissance() == $autrepersonne->getDateNaissance() &&
+                $unepersonne->getNationalite() == $autrepersonne->getNationalite() &&
+                $unepersonne->getSexe() == $autrepersonne->getSexe())
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function creationPersonne(Personne $personne)
     {
         DB::table('personne')->insert(['Identifiant'=>$personne->getId(),'Nom'=>$personne->getNom(),
