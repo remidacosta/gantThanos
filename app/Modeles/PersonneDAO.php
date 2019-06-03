@@ -37,6 +37,7 @@ class PersonneDAO extends DAO
         $maPersonne->setPrenom($objet->Prenom);
         $maPersonne->setSexe($objet->Sexe);
         $maPersonne->setNationalite($objet->Nationalite);
+        $maPersonne->setEtat($objet->Etat);
         $maPersonne->setDateNaissance($objet->DateNaissance);
 
         return $maPersonne;
@@ -46,6 +47,6 @@ class PersonneDAO extends DAO
     {
         DB::table('personne')->insert(['Identifiant'=>$personne->getId(),'Nom'=>$personne->getNom(),
             'Prenom'=>$personne->getPrenom(),'Sexe'=>$personne->getSexe(),'Nationalite'=>$personne->getNationalite(),
-            'DateNaissance'=>$personne->getDateNaissance()]);
+            'Etat'=>$personne->getEtat(),'DateNaissance'=>$personne->getDateNaissance()]);
     }
 }

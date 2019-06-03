@@ -5,6 +5,7 @@
     <th>Prenom</th>
     <th>Date Naissance</th>
     <th>Nationalite</th>
+    <th>Etat</th>
     <th>Sexe</th>
     </thead>
     @foreach ($lesPersonnes as $personne)
@@ -14,6 +15,7 @@
             <td>{{ $personne->getPrenom() }}</td>
             <td>{{ $personne->getDateNaissance() }}</td>
             <td>{{ $personne->getNationalite() }}</td>
+            <td>{{ $personne->getEtat() }}</td>
             <td>{{ $personne->getSexe() }}</td>
         </tr>
     @endforeach

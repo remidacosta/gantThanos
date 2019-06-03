@@ -13,6 +13,7 @@ class Personne extends Model
     private $sexe;
     private $nationalite;
     private $dateNaissance;
+    private $etat;
 
 
     public function setId($id)
@@ -43,6 +44,16 @@ class Personne extends Model
     public function getSexe()
     {
         return $this->sexe;
+    }
+
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
     }
 
     public function getNationalite()

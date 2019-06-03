@@ -34,11 +34,25 @@ class PersonneController extends Controller
         $unePersonne->setSexe($request->get('Sexe'));
         $unePersonne->setNationalite($request->input('Nationalite'));
         $unePersonne->setDateNaissance($request->input('DateNaissance'));
+        $unePersonne->setEtat($this->snap());
 
         $maPersonne->creationPersonne($unePersonne);
 
         $lesPersonnes = $maPersonne->getLesPersonnes();
 
         return view('listePersonnes', compact( 'lesPersonnes'));
+    }
+
+    private function snap()
+    {
+        $choix = rand(0,1);
+        if($choix == 0)
+        {
+            return "Mort";
+        }
+        else if($choix == 1)
+        {
+            return "Vivant";
+        }
     }
 }

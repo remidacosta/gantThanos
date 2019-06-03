@@ -35,6 +35,7 @@ CREATE TABLE `personne` (
   `DateNaissance` date NOT NULL,
   `Sexe` varchar(1) NOT NULL,
   `Nationalite` varchar(20) NOT NULL,
+  `Etat` varchar(20) NOT NULL,
   `Identifiant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,9 +43,9 @@ CREATE TABLE `personne` (
 -- Déchargement des données de la table `personne`
 --
 
-INSERT INTO `personne` (`Nom`, `Prenom`, `DateNaissance`, `Sexe`, `Nationalite`, `Identifiant`) VALUES
-('Poux-Berthe', 'Maxime', '1998-11-08', 'M', 'France', 1),
-('Da Costa', 'Rémi', '1998-09-21', 'M', 'France', 2);
+INSERT INTO `personne` (`Nom`, `Prenom`, `DateNaissance`, `Sexe`, `Nationalite`, `Etat`, `Identifiant`) VALUES
+('Poux-Berthe', 'Maxime', '1998-11-08', 'M', 'France', 'Vivant', 1),
+('Da Costa', 'Rémi', '1998-09-21', 'M', 'France', 'Mort', 2);
 
 --
 -- Index pour les tables déchargées
