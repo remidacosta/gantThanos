@@ -13,3 +13,11 @@
         }
 ?>
 
+{!! Form::open(['url' => 'ajoutPersonne']) !!}
+{!! Form::submit('Ajouter une autre personne', ['class' => 'btn btn-info pull-right']) !!}
+{!! Form::close() !!}
+
+{!! Form::open(['url' => 'listePersonnes']) !!}
+{!! Form::submit('Afficher la liste des gens', ['class' => 'btn btn-info pull-right']) !!}
+{!! Form::close() !!}
+

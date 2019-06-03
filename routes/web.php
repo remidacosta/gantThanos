@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/listePersonnes','PersonneController@getLesPersonnes');
+Route::post('/listePersonnes','PersonneController@getLesPersonnes');
 Route::get('/ajoutPersonne','PersonneController@ajoutPersonne');
 Route::post('/ajoutPersonne','PersonneController@ajoutPersonne');
 Route::post('/insertionPersonne','PersonneController@postAjoutPersonne');

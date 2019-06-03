@@ -28,22 +28,22 @@ class PersonneController extends Controller
     {
         $maPersonne = new PersonneDAO();
         $unePersonne = new Personne();
-        $resultatSnap = $this->snap();
 
         $unePersonne->setNom($request->input('Nom'));
         $unePersonne->setPrenom($request->input('Prenom'));
         $unePersonne->setSexe($request->get('Sexe'));
         $unePersonne->setNationalite($request->input('Nationalite'));
         $unePersonne->setDateNaissance($request->input('DateNaissance'));
-        $unePersonne->setEtat($resultatSnap);
-
 
         if(!$maPersonne->verifDoublon($unePersonne))
         {
+            $unePersonne->setEtat($this->snap());
             $maPersonne->creationPersonne($unePersonne);
         }
+        
+        $resultatSnap = $unePersonne->getEtat();
 
-        return view('insertionOK', compact( 'resultatSnap'));
+        return view('InsertionOK', compact( 'resultatSnap'));
     }
 
 
