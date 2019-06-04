@@ -18,11 +18,23 @@
                 {!! $errors->first('Prenom', '<small class="help-block">:message</small>') !!}
             </div>
             <div class="form-group {!! $errors->has('Sexe') ? 'has-error' : '' !!}">
-                {!! Form::radio('Sexe', 'M') !!} Homme
+                @if($unepersonne->getSexe()=='M')
+                    {!! Form::radio('Sexe', 'M', true) !!} Homme
+                @else
+                    {!! Form::radio('Sexe', 'M') !!} Homme
+                @endif
                 {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
-                {!! Form::radio('Sexe', 'F') !!} Femme
+                @if($unepersonne->getSexe()=='F')
+                    {!! Form::radio('Sexe', 'F', true) !!} Femme
+                @else
+                    {!! Form::radio('Sexe', 'F') !!} Femme
+                @endif
                 {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
-                {!! Form::radio('Sexe', 'A') !!} Autre
+                @if($unepersonne->getSexe()=='A')
+                    {!! Form::radio('Sexe', 'A', true) !!} Autre
+                @else
+                    {!! Form::radio('Sexe', 'A') !!} Autre
+                @endif
                 {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
             </div>
             <div class="form-group {!! $errors->has('Nationalite') ? 'has-error' : '' !!}">
@@ -30,7 +42,7 @@
                 {!! $errors->first('Nationalite', '<small class="help-block">:message</small>') !!}
             </div>
             <div class="form-group {!! $errors->has('DateNaissance') ? 'has-error' : '' !!}">
-                {!! Form::date('DateNaissance', null, ['class' => 'form-control', 'placeholder' => 'DateNaissance']) !!}
+                {!! Form::date('DateNaissance', $unepersonne->getDateNaissance(), ['class' => 'form-control', 'placeholder' => 'DateNaissance']) !!}
                 {!! $errors->first('DateNaissance', '<small class="help-block">:message</small>') !!}
             </div>
             {!! Form::submit('Valider', ['class' => 'btn btn-info pull-right']) !!}
