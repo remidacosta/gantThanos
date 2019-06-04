@@ -1,3 +1,14 @@
+@extends('template')
+
+@section('titrePage')
+    Liste des personnes
+@endsection
+
+@section('titreItem')
+    <h1>Les personnes inscrites</h1>
+@endsection
+
+@section('contenu')
 <table class="table table-bordered table-stripped">
     <thead>
     <th>Id</th>
@@ -36,3 +47,4 @@
     {!! Form::submit('Ajouter', ['class' => 'btn btn-info pull-right']) !!}
     {!! Form::close() !!}
 </table>
+@endsection

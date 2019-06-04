@@ -20,7 +20,7 @@ class PersonneController extends Controller
 
     public function ajoutPersonne()
     {
-        return view('saisiePersonne');
+        return view('index');
     }
 
     public function supprimerPersonne($n)
