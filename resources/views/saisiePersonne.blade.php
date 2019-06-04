@@ -1,4 +1,8 @@
-    <h1>Tester le gant de Thanos</h1>
+<audio id="audioSnap">
+    <source src="../musiques/thanos-snap-sound.mp3">
+</audio>
+
+<h1>Tester le gant de Thanos</h1>
 
     <div class="col-sm-offset-3 col-sm-6">
         <div class="card">

@@ -7,9 +7,10 @@
     <title>@yield('titrePage')</title>
     <script type="text/javascript">
 
-        function miseEnAttente(element, duree)
+        function miseEnAttente(element)
         {
-            setTimeout(reinitgant, duree); //On attend 1 sec avant d'exécuter la fonction
+            setTimeout(reinitgant, 2600);
+            setTimeout(jouerSonSnap, 500);
         }
 
         function reinitgant(element)
@@ -25,13 +26,19 @@
             form.reset();
         }
 
+        function jouerSonSnap()
+        {
+            var player = document.querySelector('#audioSnap');
+            player.play();
+        }
+
         function snap(element)
         {
             if(element.getAttribute("src") == "{{ url('../images/gant.png')  }}")
             {
                 var v = "../images/snap.gif";
                 element.setAttribute("src", v);
-                miseEnAttente(element, 2600);
+                miseEnAttente(element);
             }
         }
     </script>
