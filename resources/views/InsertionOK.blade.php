@@ -1,23 +1,34 @@
+@extends('template')
+
+@section('titrePage')
+    Page d'accueil
+@endsection
+
+@section('contenu')
 <?php
     if($resultatSnap == "Mort")
     {
         ?>
-        <h1>Vous êtes mort</h1>
+        <center><h1 class = "notif_insertion">Vous etes mort</h1></center>
+        <center><img src="{{url('../images/thanos_mechant.jpg') }}" ></center>
 <?php
     }
     else if($resultatSnap == "Vivant")
+    {
+        ?>
+        <center><h1 class = "notif_insertion">Vous etes vivant</h1></center>
+        <center><img src="{{url('../images/thanos_cool.jpg') }}" ></center>
+<?php
+    }
+    else
         {
             ?>
-        <h1>Vous êtes vivant</h1>
+        <center><h1 class = "notif_insertion">Vous avez deja eu votre sentence !!</h1></center>
+        <center><img src="{{url('../images/thanos_neutre.jpg') }}" ></center>
 <?php
         }
+
 ?>
 
-{!! Form::open(['url' => 'ajoutPersonne']) !!}
-{!! Form::submit('Ajouter une autre personne', ['class' => 'btn btn-info pull-right']) !!}
-{!! Form::close() !!}
 
-{!! Form::open(['url' => 'listePersonnes']) !!}
-{!! Form::submit('Afficher la liste des gens', ['class' => 'btn btn-info pull-right']) !!}
-{!! Form::close() !!}
-
+@endsection
