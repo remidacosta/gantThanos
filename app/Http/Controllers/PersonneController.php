@@ -25,29 +25,31 @@ class PersonneController extends Controller
 
     public function supprimerPersonne($n)
     {
-        $lesPersonnes = new PersonneDAO();
-        $unepersonne = $lesPersonnes->getPersonneById($n);
-        $lesPersonnes->supprimerPersonne($unepersonne);
+        $personnes = new PersonneDAO();
+        $unepersonne = $personnes->getPersonneById($n);
+        $personnes->supprimerPersonne($unepersonne);
+        $lesPersonnes=$personnes->getLesPersonnes();
         return view('listePersonnes', compact( 'lesPersonnes')); //il y a une erreur après la redirection, trouver pourquoi
     }
 
     public function modifierPersonne($n)
     {
-        $lesPersonnes = new PersonneDAO();
-        $unepersonne = $lesPersonnes->getPersonneById($n);
+        $personnes = new PersonneDAO();
+        $unepersonne = $personnes->getPersonneById($n);
         return view('modifierPersonne', compact('unepersonne'));
     }
 
     public function postModifierPersonne(InsertionConfRequest $request, $n)//il y a une erreur après la redirection, trouver pourquoi
     {
-        $lesPersonnes = new PersonneDAO();
-        $unepersonne = $lesPersonnes->getPersonneById($n);
+        $personnes = new PersonneDAO();
+        $unepersonne = $personnes->getPersonneById($n);
         $unepersonne->setNom($request->input('Nom'));
         $unepersonne->setPrenom($request->input('Prenom'));
         $unepersonne->setSexe($request->get('Sexe'));
         $unepersonne->setNationalite($request->input('Nationalite'));
         $unepersonne->setDateNaissance($request->input('DateNaissance'));
-        $lesPersonnes->modifierPersonne($unepersonne);
+        $personnes->modifierPersonne($unepersonne);
+        $lesPersonnes=$personnes->getLesPersonnes();
         return view('listePersonnes', compact( 'lesPersonnes'));
     }
 
