@@ -94,7 +94,7 @@
 @yield('contenu')
 
 <footer class="footer">
-    <p>Petite page web créée par DA COSTA Rémi et POUX-BERTHE Maxime mettant pour connaître votre sort suite au snap de Thanos</p>
+    <p>Petite page web créée par DA COSTA Rémi et POUX-BERTHE Maxime pour connaître votre sort suite au snap de Thanos</p>
 </footer>
 {!! Html::script('lib/jquery/jquery-3.3.1.slim.min.js') !!}
 {!! Html::script('lib/js/bootstrap.bundle.js') !!}
