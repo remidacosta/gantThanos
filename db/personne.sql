@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 -- Structure de la table `personne`
 --
 use GantThanos;
-DROP TABLE `personne`;
 CREATE TABLE `personne` (
   `Nom` varchar(20) NOT NULL,
   `Prenom` varchar(20) NOT NULL,

@@ -67,4 +67,18 @@ class PersonneDAO extends DAO
             'Prenom'=>$personne->getPrenom(),'Sexe'=>$personne->getSexe(),'Nationalite'=>$personne->getNationalite(),
             'Etat'=>$personne->getEtat(),'DateNaissance'=>$personne->getDateNaissance()]);
     }
+
+    public function modifierPersonne(Personne $personne)
+    {
+        //J'ai pas encore trouvé la syntaxe de la requête en laravel mais ça marche jusque là
+
+      /*  DB::table('personne')->update(['Identifiant'=>$personne->getId(),'Nom'=>$personne->getNom(),
+            'Prenom'=>$personne->getPrenom(),'Sexe'=>$personne->getSexe(),'Nationalite'=>$personne->getNationalite(),
+            'Etat'=>$personne->getEtat(),'DateNaissance'=>$personne->getDateNaissance()]);*/
+    }
+
+    public function supprimerPersonne(Personne $personne)
+    {
+        //syntaxe sql à faire
+    }
 }

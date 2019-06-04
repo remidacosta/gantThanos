@@ -19,13 +19,13 @@
             <td>{{ $personne->getSexe() }}</td>
 
             <td>
-                {!! Form::open(['url' => '']) !!}
+                {!! Form::open(['url' => 'modifierPersonne/'.$personne->getId().'', 'method' => 'get']) !!}
                 {!! Form::submit('Modifier', ['class' => 'btn btn-info pull-right']) !!}
                 {!! Form::close() !!}
             </td>
 
             <td>
-                {!! Form::open(['url' => '']) !!}
+                {!! Form::open(['url' => 'supprimerPersonne/'.$personne->getId()]) !!}
                 {!! Form::submit('Supprimer', ['class' => 'btn btn-info pull-right']) !!}
                 {!! Form::close() !!}
             </td>

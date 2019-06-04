@@ -20,3 +20,6 @@ Route::post('/listePersonnes','PersonneController@getLesPersonnes');
 Route::get('/ajoutPersonne','PersonneController@ajoutPersonne');
 Route::post('/ajoutPersonne','PersonneController@ajoutPersonne');
 Route::post('/insertionPersonne','PersonneController@postAjoutPersonne');
+Route::get('/modifierPersonne/{n}','PersonneController@modifierPersonne');
+Route::post('/modifierPersonne/{n}','PersonneController@postModifierPersonne');
+Route::post('/supprimerPersonne/{n}','PersonneController@supprimerPersonne');
