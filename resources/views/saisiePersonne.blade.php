@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group {!! $errors->has('Nationalite') ? 'has-error' : '' !!}">
 
-                    {!! Form::select('Nationalite',array('Terre','Asgard','Xandar','Vormir','Titan','Sakaar','Hala','Ego','Jotunheim') ,['class'=>'form-control']) !!} Nationalité (planète)
+                    {!! Form::select('Nationalite',array('Terre'=>'Terre','Asgard'=>'Asgard','Xandar'=>'Xandar','Vormir'=>'Vormir','Titan'=>'Titan','Sakaar'=>'Sakaar','Hala'=>'Hala','Ego'=>'Ego','Jotunheim'=>'Jotunheim') ,['class'=>'form-control']) !!} Nationalité (planète)
                     {!! $errors->first('Nationalite', '<small class="help-block">:message</small>') !!}
                 </div>
                 <div class="form-group {!! $errors->has('DateNaissance') ? 'has-error' : '' !!}">
