@@ -83,10 +83,11 @@
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                            Se connecter
-                        </a>
-
+                        <div class="top-right links">
+                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('logout') }}">Logout</a>
+                        </div>
                     </li>
                 @endauth
 
