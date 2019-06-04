@@ -29,7 +29,7 @@ class PersonneController extends Controller
         $unepersonne = $personnes->getPersonneById($n);
         $personnes->supprimerPersonne($unepersonne);
         $lesPersonnes=$personnes->getLesPersonnes();
-        return view('listePersonnes', compact( 'lesPersonnes')); //il y a une erreur après la redirection, trouver pourquoi
+        return view('listePersonnes', compact( 'lesPersonnes'));
     }
 
     public function modifierPersonne($n)
@@ -39,7 +39,7 @@ class PersonneController extends Controller
         return view('modifierPersonne', compact('unepersonne'));
     }
 
-    public function postModifierPersonne(InsertionConfRequest $request, $n)//il y a une erreur après la redirection, trouver pourquoi
+    public function postModifierPersonne(InsertionConfRequest $request, $n)
     {
         $personnes = new PersonneDAO();
         $unepersonne = $personnes->getPersonneById($n);
