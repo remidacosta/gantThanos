@@ -5,11 +5,35 @@
     {!! Html::style('lib/bootstrap/bootstrap.min.css') !!}
     {!! Html::style('css/gantThanos.css') !!}
     <title>@yield('titrePage')</title>
+    <script type="text/javascript">
+
+        function miseEnAttente(element)
+        {
+            setTimeout(reinitgant, 2600); //On attend 1 sec avant d'exécuter la fonction
+
+        }
+
+        function reinitgant(element)
+        {
+            var x = document.getElementById("gant");
+            var v = "../images/gant.png";
+
+            x.setAttribute("src", v);
+        }
+        function snap(element)
+        {
+            var v = "../images/snap.gif";
+
+            element.setAttribute("src", v);
+            miseEnAttente(element);
+
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-
+        <a  href="{{url('/')}}" ><img class="logo-gant" src="{{url('../images/logo_gant.png') }}"></a>
         <a class="navbar-brand" href="{{url('/')}}">Gant Thanos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,13 +45,10 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                        Statistiques
+                <li class="nav-item active">
+                    <a class="nav-link" href="statistiques">Statistiques
+                        <span class="sr-only">(current)</span>
                     </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{url('listePersonnes')}}">Liste des Personnes</a>
-                    </div>
                 </li>
 
                 @auth

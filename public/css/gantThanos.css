@@ -4,6 +4,18 @@ body
     padding-left: 10px;
 }
 
+.logo-gant
+{
+    width: 50px;
+    margin-right: 10px;
+}
+
+#gant
+{
+    width: 238px;
+    height: 322px;
+}
+
 .footer
 {
     border-top: 10px solid #ccc;
