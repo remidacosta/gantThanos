@@ -21,16 +21,11 @@ Route::post('/listePersonnes','PersonneController@getLesPersonnes');
 Route::post('/ajoutPersonne','PersonneController@ajoutPersonne');
 Route::post('/insertionPersonne','PersonneController@postAjoutPersonne');
 
-Auth::routes(['register'=>false]);
-
 Route::get('/modifierPersonne/{n}','PersonneController@modifierPersonne');
 Route::post('/modifierPersonne/{n}','PersonneController@postModifierPersonne');
 Route::post('/supprimerPersonne/{n}','PersonneController@supprimerPersonne');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PersonneController@getLesPersonnes');
+Route::get('/logout', 'Auth\LoginController@logout');

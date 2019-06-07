@@ -29,6 +29,7 @@
             <td>{{ $personne->getEtat() }}</td>
             <td>{{ $personne->getSexe() }}</td>
 
+            @auth
             <td>
                 {!! Form::open(['url' => 'modifierPersonne/'.$personne->getId().'', 'method' => 'get']) !!}
                 {!! Form::submit('Modifier', ['class' => 'btn btn-info pull-right']) !!}
@@ -40,7 +41,7 @@
                 {!! Form::submit('Supprimer', ['class' => 'btn btn-info pull-right']) !!}
                 {!! Form::close() !!}
             </td>
-
+            @endauth
         </tr>
     @endforeach
     {!! Form::open(['url' => 'ajoutPersonne']) !!}
