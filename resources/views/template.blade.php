@@ -58,35 +58,23 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="statistiques">Statistiques
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-
                 @auth
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                            Bienvenue,  {{ Auth::user()->name }}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="statistiques">Statistiques
+                            <span class="sr-only">(current)</span>
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <div class="top-right links">
+                            <a href="{{ route('logout') }}">Logout</a>
                         </div>
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                            Se connecter
-                        </a>
-
+                        <div class="top-right links">
+                            <a href="{{ route('login') }}">Login</a>
+                            <a href="{{ route('register') }}">Register</a>
+                        </div>
                     </li>
                 @endauth
 
