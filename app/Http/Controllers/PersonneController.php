@@ -71,8 +71,9 @@ class PersonneController extends Controller
         }
         
         $resultatSnap = $unePersonne->getEtat();
+        $sexe = $unePersonne->getSexe();
 
-        return view('InsertionOK', compact( 'resultatSnap'));
+        return view('InsertionOK', compact( 'resultatSnap'), compact('sexe'));
     }
 
 

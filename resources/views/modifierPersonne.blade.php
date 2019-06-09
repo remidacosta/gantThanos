@@ -1,6 +1,13 @@
-<h1>Modifier une Personne</h1>
+@extends('template')
 
-<div class="col-sm-offset-3 col-sm-6">
+@section('titrePage')
+    Modifier une personne
+@endsection
+
+@section('contenu')
+<center><h1>Modifier une Personne</h1></center>
+
+<div class="col-sm-offset-3 col-sm-6" style="margin:auto">
     <div class="card">
         <div class="card-header">Modifier les attributs suivants : </div>
         <div class="card-body">
@@ -38,7 +45,8 @@
                 {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
             </div>
             <div class="form-group {!! $errors->has('Nationalite') ? 'has-error' : '' !!}">
-                {!! Form::text('Nationalite', $unepersonne->getNationalite(), ['class' => 'form-control', 'placeholder' => 'Nationalite']) !!}
+                {!! Form::select('Nationalite',array('Terre'=>'Terre','Asgard'=>'Asgard','Xandar'=>'Xandar','Vormir'=>'Vormir','Titan'=>'Titan','Sakaar'=>'Sakaar','Hala'=>'Hala','Ego'=>'Ego','Jotunheim'=>'Jotunheim') ,$unepersonne->getNationalite(),['class'=>'form-control']) !!} Nationalité (planète)
+
                 {!! $errors->first('Nationalite', '<small class="help-block">:message</small>') !!}
             </div>
             <div class="form-group {!! $errors->has('DateNaissance') ? 'has-error' : '' !!}">
@@ -51,3 +59,4 @@
     </div>
 </div>
 <p></p>
+@endsection
