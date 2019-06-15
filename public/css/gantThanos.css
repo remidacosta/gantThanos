@@ -7,6 +7,11 @@
 body
 {
     padding-left: 10px;
+    /*margin: 0;
+    min-height: 100vh;*/
+    /*display: flex;
+   /* justify-content: center;
+    align-items: center;
     /*background-color : black;
     background-image:url("../../images/fond_ecran.png");
     background-attachment:fixed;
@@ -38,4 +43,26 @@ body
     border-top: 10px solid #ccc;
     padding-top: 10px;
     text-align: center;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dust {
+    position: absolute;
+
 }

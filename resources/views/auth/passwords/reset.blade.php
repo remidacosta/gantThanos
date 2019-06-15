@@ -1,11 +1,19 @@
-@extends('layouts.app')
+@extends('template')
 
-@section('content')
+@section('titrePage')
+    Mot de passe oublié
+@endsection
+
+@section('titreItem')
+    <h1 style="text-align:center">Mot de passe oublié</h1>
+@endsection
+
+@section('contenu')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header">{{ __('Réinitialiser votre mot de passe') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
@@ -14,7 +22,7 @@
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse e-mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>

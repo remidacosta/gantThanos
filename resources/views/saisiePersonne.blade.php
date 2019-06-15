@@ -34,7 +34,10 @@
                     Date de naissance{!! Form::date('DateNaissance', null, ['class' => 'form-control', 'placeholder' => 'DateNaissance']) !!}
                     {!! $errors->first('DateNaissance', '<small class="help-block">:message</small>') !!}
                 </div>
-                <center> <img  id="gant" src="{{url('../images/gant.png') }}" onclick="snap(this); " ></center>
+
+                <div class="content">
+                    <center> <img  id="gant" src="{{url('../images/gant.png') }}" onclick="snap(this); " ></center>
+                </div>
 
             </div>
         </div>

@@ -6,6 +6,7 @@
 
 @section('contenu')
 <?php
+
     if($resultatSnap == "Mort")
     {
         if($sexe == "F")
@@ -18,8 +19,8 @@
         else
             {
                 ?>
-                <center><h1 class = "notif_insertion">Vous etes mort</h1></center>
-                <center><img src="{{url('../images/thanos_mechant.jpg') }}" ></center>
+                    <center><h1 class = "notif_insertion">Vous etes mort</h1></center>
+                    <center><img src="{{url('../images/thanos_mechant.jpg') }}" ></center>
 <?php
             }
     }
@@ -35,16 +36,16 @@
         else
             {
                 ?>
-                <center><h1 class = "notif_insertion">Vous etes mort</h1></center>
-                <center><img src="{{url('../images/thanos_mechant.jpg') }}" ></center>
+                    <center><h1 class = "notif_insertion">Vous etes vivant</h1></center>
+                    <center><img src="{{url('../images/thanos_cool.jpg') }}" ></center>
 <?php
             }
     }
     else
         {
             ?>
-        <center><h1 class = "notif_insertion">Vous avez deja eu votre sentence !!</h1></center>
-        <center><img src="{{url('../images/thanos_neutre.jpg') }}" ></center>
+            <center><h1 class = "notif_insertion">Vous avez deja eu votre sentence !!</h1></center>
+            <center><img src="{{url('../images/thanos_neutre.jpg') }}" ></center>
 <?php
         }
 
