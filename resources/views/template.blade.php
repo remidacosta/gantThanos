@@ -79,7 +79,7 @@
                 <p>Nous sommes 2 élèves en 1ère année du cursus ingénieur informatique à Polytech Lyon.
                 Nous avons réalisé un site internet qui permet de connaître la sentence de toutes
                 les personnes qui renseigneront leur identité dans le formulaire. Suite à cela,
-                il suffira d'utiliser el gant pour connaître le verdict.</p>
+                il suffira d'utiliser le gant pour connaître le verdict.</p>
 
             </div>
             <!-- Grid column -->

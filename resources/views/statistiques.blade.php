@@ -22,7 +22,7 @@
         @endforeach
 
     </table>
-    <h2>Tranche d'âge des décédés</h2>
+    <h2>Tranche d'âge des décédés (en pourcentage)</h2>
     <table>
         <thead>
         <th>Nationalite</th>

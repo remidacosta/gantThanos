@@ -40,5 +40,27 @@ ALTER TABLE `personne`
   ADD PRIMARY KEY (`Identifiant`);
 
 ALTER TABLE `personne`
-  MODIFY `Identifiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Identifiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+INSERT INTO `personne` (`Nom`, `Prenom`, `DateNaissance`, `Sexe`, `Nationalite`, `Etat`, `Identifiant`) VALUES
+('Poux-Berthe', 'Maxime', '1998-11-08', 'M', 'Terre', 'Vivant', 1),
+('Da Costa', 'Rémi', '1998-09-21', 'M', 'Terre', 'Mort', 2),
+('Herve', 'Jean', '1947-11-08', 'F', 'Terre', 'Vivant', 3),
+('Pierre', 'Michel', '1967-11-08', 'A', 'Terre', 'Vivant', 4),
+('Gaston', 'Ferjeux', '1932-11-08', 'M', 'Vormir', 'Mort', 5),
+('Eru', 'René', '1914-11-08', 'F', 'Terre', 'Mort', 6),
+('Iluvatar', 'Eric', '1923-11-08', 'F', 'Vormir', 'Mort', 7),
+('Ilu', 'Antoine', '1987-11-08', 'A', 'Terre', 'Mort', 8),
+('Vanba', 'Patrick', '1923-11-08', 'A', 'Ego', 'Vivant', 9),
+('Vanba', 'Aurélie', '199-11-08', 'F', 'Ego', 'Mort', 10),
+('Tétard', 'Léa', '1916-11-08', 'F', 'Ego', 'Vivant', 11),
+('Polisson', 'Thierry', '1997-11-08', 'M', 'Ego', 'Mort', 12),
+('Jupiter', 'Clém', '1920-11-08', 'M', 'Terre', 'Vivant', 13),
+('Karl', 'Alex', '2018-11-08', 'M', 'Terre', 'Mort', 14),
+('Jamel', 'Sophie', '1913-11-08', 'A', 'Ego', 'Vivant', 15),
+('Dupont', 'Morgan', '1946-11-08', 'A', 'Terre', 'Mort', 16),
+('Pirrera', 'Juliette', '1954-11-08', 'A', 'Vormir', 'Mort', 17),
+('CC', 'Claire', '1976-11-08', 'F', 'Ego', 'Mort', 18),
+('Odinson', 'Thor', '1987-11-08', 'M', 'Vormir', 'Vivant', 19),
+('Rogers', 'Steve', '1999-11-08', 'M', 'Ego', 'Mort', 20);
 COMMIT;
