@@ -7,10 +7,13 @@
     <title>@yield('titrePage')</title>
 </head>
 <body>
+<header>
+    <h1>@yield('titreItem')</h1>
+</header>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a  href="{{url('/')}}" ><img class="logo-gant" src="{{url('../images/logo_gant.png') }}"></a>
-        <a class="navbar-brand" id="titre_site" href="{{url('/')}}">Gant Thanos</a>
+        <a class="navbar-brand" id="titre_site" href="{{url('/')}}">Gant de Thanos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,13 +45,58 @@
         </div>
     </div>
 </nav>
-<header>
-    <h1>@yield('titreItem')</h1>
-</header>
 @yield('contenu')
 
 <!-- Footer -->
+<footer class="page-footer font-small teal pt-4">
 
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+
+                <!-- Content -->
+                <h5 class="text-uppercase font-weight-bold">Contexte</h5>
+                <p>Thanos est un méchant de l'univers MARVEL. Dans les films et les livres, Thanos
+                a pour but de réunir les 6 pierres d'infinité. Ces pierres donnent à leur porteur
+                un pouvoir égal à celui des dieux. Une fois en possession de ces pierres, Thanos utilisa un gant magique
+                et eu pour souhait celui d'eliminer LA MOITIE DE L'UNIVERS (de manière impartiale).</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mb-md-0 mb-3">
+
+                <!-- Content -->
+                <h5 class="text-uppercase font-weight-bold">Réalisation</h5>
+                <p>Nous sommes 2 élèves en 1ère année du cursus ingénieur informatique à Polytech Lyon.
+                Nous avons réalisé un site internet qui permet de connaître la sentence de toutes
+                les personnes qui renseigneront leur identité dans le formulaire. Suite à cela,
+                il suffira d'utiliser el gant pour connaître le verdict.</p>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
 <!-- Footer -->
 
 {!! Html::script('lib/jquery/jquery-3.3.1.slim.min.js') !!}
@@ -62,119 +110,10 @@
 
 <script type="text/javascript">
 
-    var imageDataArray = [];
-    var canvasCount = 35;
-    function disparition()
-    {
-        var gantfixe = document.getElementById("gant");
-        html2canvas(gantfixe).then(canvas => {
-            //capture all div data as image
-            ctx = canvas.getContext("2d");
-            var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            var pixelArr = imageData.data;
-            createBlankImageData(imageData);
-            //put pixel info to imageDataArray (Weighted Distributed)
-            for (let i = 0; i < pixelArr.length; i+=4) {
-                //find the highest probability canvas the pixel should be in
-                let p = Math.floor((i/pixelArr.length) *canvasCount);
-                let a = imageDataArray[weightedRandomDistrib(p)];
-                a[i] = pixelArr[i];
-                a[i+1] = pixelArr[i+1];
-                a[i+2] = pixelArr[i+2];
-                a[i+3] = pixelArr[i+3];
-            }
-            //create canvas for each imageData and append to target element
-            for (let i = 0; i < canvasCount; i++) {
-                let c = newCanvasFromImageData(imageDataArray[i], canvas.width, canvas.height);
-                c.classList.add("dust");
-                $(".content").append(c);
-            }
-
-            //clear all children except the canvas
-            $(".content").children().not(".dust").fadeOut(3500);
-            //apply animation
-            $(".dust").each( function(index){
-                animateBlur($(this),0.8,800);
-                setTimeout(() => {
-                    animateTransform($(this),100,-100,chance.integer({ min: -15, max: 15 }),800+(110*index));
-                }, 70*index);
-                //remove the canvas from DOM tree when faded
-                $(this).delay(70*index).fadeOut((110*index)+800,"easeInQuint",()=> {$( this ).remove();});
-            });
-        });
-    }
-
-    function weightedRandomDistrib(peak)
-    {
-        var prob = [], seq = [];
-        for(let i=0;i<canvasCount;i++) {
-            prob.push(Math.pow(canvasCount-Math.abs(peak-i),3));
-            seq.push(i);
-        }
-        return chance.weighted(seq, prob);
-    }
-
-    function animateBlur(elem,radius,duration)
-    {
-        var r =0;
-        $({rad:0}).animate({rad:radius}, {
-            duration: duration,
-            easing: "easeOutQuad",
-            step: function(now) {
-                elem.css({
-                    filter: 'blur(' + now + 'px)'
-                });
-            }
-        });
-    }
-
-    function animateTransform(elem,sx,sy,angle,duration)
-    {
-        var td = tx = ty =0;
-        $({x: 0, y:0, deg:0}).animate({x: sx, y:sy, deg:angle}, {
-            duration: duration,
-            easing: "easeInQuad",
-            step: function(now, fx) {
-                if (fx.prop == "x")
-                    tx = now;
-                else if (fx.prop == "y")
-                    ty = now;
-                else if (fx.prop == "deg")
-                    td = now;
-                elem.css({
-                    transform: 'rotate(' + td + 'deg)' + 'translate(' + tx + 'px,'+ ty +'px)'
-                });
-            }
-        });
-    }
-
-    function createBlankImageData(imageData)
-    {
-        for(let i=0;i<canvasCount;i++)
-        {
-            let arr = new Uint8ClampedArray(imageData.data);
-            for (let j = 0; j < arr.length; j++) {
-                arr[j] = 0;
-            }
-            imageDataArray.push(arr);
-        }
-    }
-
-    function newCanvasFromImageData(imageDataArray ,w , h)
-    {
-        var canvas = document.createElement('canvas');
-        canvas.width = w;
-        canvas.height = h;
-        tempCtx = canvas.getContext("2d");
-        tempCtx.putImageData(new ImageData(imageDataArray, w , h), 0, 0);
-
-        return canvas;
-    }
-
     function miseEnAttente(element)
     {
         setTimeout(reinitgant, 2600); //2600
-        setTimeout(submitForm, 10000);
+        setTimeout(submitForm, 2700);
         setTimeout(jouerSonSnap, 500);
     }
 
@@ -192,8 +131,6 @@
         var v = "../images/gant.png";
 
         x.setAttribute("src", v);
-
-        disparition();
     }
 
     function jouerSonSnap()

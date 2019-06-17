@@ -9,8 +9,8 @@ body
     padding-left: 10px;
     /*margin: 0;
     min-height: 100vh;*/
-    /*display: flex;
-   /* justify-content: center;*/
+    /*display: flex;*/
+    justify-content: center;
     /*align-items: center;
     background-color : black;
     background-image:url("../../images/fond_ecran.png");
@@ -21,7 +21,7 @@ body
 
 .logo-gant
 {
-    width: 50px;
+    width: 40px;
     margin-right: 10px;
 }
 
@@ -34,8 +34,8 @@ body
 
 #gant
 {
-    width: 238px;
-    height: 322px;
+    width: 172px;
+    height: 233px;
 }
 
 footer
@@ -43,10 +43,23 @@ footer
     border-top: 10px solid #ccc;
     padding-top: 10px;
     text-align: center;
-    background-color : #212529;
+    background-color : #1d1e2c;
     color:white;
 }
 
+header
+{
+    height:200px;
+    background-color : #1d1e2c;
+    background-image: url("../../images/bandeau_siteweb.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    background-color: #1d1e2c;
+}
 
 * {
     box-sizing: border-box;
@@ -55,8 +68,8 @@ footer
 #titre_site
 {
     font-family: "Avengers font";
-    text-align: center;
-    font-size: 40px;
+    color : #e8a44e;
+    font-size: 30px;
 }
 
 body
@@ -66,12 +79,24 @@ body
 }
 
 .content {
+    height: 233px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.dust {
-    position: absolute;
 
+.content span
+{
+    visibility: hidden;
+}
+
+.comm
+{
+    font-size: 15px;
+}
+
+.content:hover .comm
+{
+    visibility: visible;
 }

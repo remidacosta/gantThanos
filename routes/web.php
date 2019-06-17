@@ -30,3 +30,4 @@ Auth::routes();
 Route::get('/home', 'PersonneController@getLesPersonnes');
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/statistiques', 'StatistiquesController@getLesStatistiques');
+
