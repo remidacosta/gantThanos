@@ -10,7 +10,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <a  href="{{url('/')}}" ><img class="logo-gant" src="{{url('../images/logo_gant.png') }}"></a>
-        <a class="navbar-brand" href="{{url('/')}}">Gant Thanos</a>
+        <a class="navbar-brand" id="titre_site" href="{{url('/')}}">Gant Thanos</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,9 +23,7 @@
                 </li>
                 @auth
                     <li class="nav-item active">
-                        <a class="nav-link" href="statistiques">Statistiques
-                            <span class="sr-only">(current)</span>
-                        </a>
+                        <a class="nav-link" href="statistiques">Statistiques</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('logout') }}">Déconnexion</a>
@@ -49,9 +47,9 @@
 </header>
 @yield('contenu')
 
-<footer class="footer">
-    <p>Petite page web créée par DA COSTA Rémi et POUX-BERTHE Maxime pour connaître votre sort suite au snap de Thanos</p>
-</footer>
+<!-- Footer -->
+
+<!-- Footer -->
 
 {!! Html::script('lib/jquery/jquery-3.3.1.slim.min.js') !!}
 {!! Html::script('lib/js/bootstrap.bundle.js') !!}

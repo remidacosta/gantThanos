@@ -10,9 +10,9 @@ body
     /*margin: 0;
     min-height: 100vh;*/
     /*display: flex;
-   /* justify-content: center;
-    align-items: center;
-    /*background-color : black;
+   /* justify-content: center;*/
+    /*align-items: center;
+    background-color : black;
     background-image:url("../../images/fond_ecran.png");
     background-attachment:fixed;
     background-repeat:no-repeat;
@@ -38,11 +38,13 @@ body
     height: 322px;
 }
 
-.footer
+footer
 {
     border-top: 10px solid #ccc;
     padding-top: 10px;
     text-align: center;
+    background-color : #212529;
+    color:white;
 }
 
 
@@ -50,8 +52,15 @@ body
     box-sizing: border-box;
 }
 
+#titre_site
+{
+    font-family: "Avengers font";
+    text-align: center;
+    font-size: 40px;
+}
 
-body {
+body
+{
     justify-content: center;
     align-items: center;
 }

@@ -19,9 +19,7 @@
                 </div>
                 <div class="form-group {!! $errors->has('Sexe') ? 'has-error' : '' !!}">
                     {!! Form::radio('Sexe', 'M') !!} Homme
-                    {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
                     {!! Form::radio('Sexe', 'F') !!} Femme
-                    {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
                     {!! Form::radio('Sexe', 'A') !!} Autre
                     {!! $errors->first('Sexe', '<small class="help-block">:message</small>') !!}
                 </div>
