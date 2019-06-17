@@ -4,10 +4,6 @@
     Liste des personnes
 @endsection
 
-@section('titreItem')
-    <h1>Les personnes inscrites</h1>
-@endsection
-
 @section('contenu')
 <table class="table table-bordered table-stripped">
     <thead>

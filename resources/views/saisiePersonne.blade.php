@@ -2,7 +2,8 @@
     <source src="../musiques/thanos-snap-sound.mp3">
 </audio>
 
-<h1>Tester le gant de Thanos</h1>
+<div class="formulaire">
+    <h1>Tester le gant de Thanos</h1>
 
     <div class="col-sm-offset-3 col-sm-6">
         <div class="card">
@@ -34,10 +35,12 @@
                 </div>
 
                 <div class="content">
-                    <center> <img  id="gant" src="{{url('../images/gant.png') }}" onclick="snap(this); " ></center>
+                    <center> <img  id="gant" src="{{url('../images/gant.png') }}" onclick="snap(this); "  alt=""></center>
+                    <span class="comm">Appuyer sur le gant pour déchaîner toute la puissance de Thanos ;-) Avec le son c'est encore mieux</span>
                 </div>
 
             </div>
         </div>
     </div>
     <p></p>
+</div>
