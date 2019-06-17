@@ -36,10 +36,6 @@ CREATE TABLE `personne` (
   `Identifiant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `personne` (`Nom`, `Prenom`, `DateNaissance`, `Sexe`, `Nationalite`, `Etat`, `Identifiant`) VALUES
-('Poux-Berthe', 'Maxime', '1998-11-08', 'M', 'France', 'Vivant', 1),
-('Da Costa', 'Rémi', '1998-09-21', 'M', 'France', 'Mort', 2);
-
 ALTER TABLE `personne`
   ADD PRIMARY KEY (`Identifiant`);
 
