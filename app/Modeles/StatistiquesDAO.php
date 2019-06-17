@@ -53,115 +53,101 @@ class StatistiquesDAO extends Model
             }
             else
                 $maStat->setPourcentageAutresMorts("Non défini");
+
+
             $nbPersonne=DB::table('personne')->where('Nationalite', $nationalite)->where('Etat', 'Mort')->count();
             if($nbPersonne>0) {
-                $currentDate= date('Y-m-d');
-                $date10ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -10 year");
-                $date20ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -20 year");
-                $date30ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -30 year");
-                $date40ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -40 year");
-                $date50ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -50 year");
-                $date60ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -60 year");
-                $date70ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -70 year");
-                $date80ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -80 year");
-                $date90ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -90 year");
-                $date100ans= strtotime(date("Y-m-d", strtotime($currentDate)) . " -100 year");
+                $currentDate= new \DateTime();
+                $date10ans=new \DateTime();
+                $date10ans= $date10ans->sub(new \DateInterval('P10Y'));
+                $date20ans=new \DateTime();
+                $date20ans= $date20ans->sub(new \DateInterval('P20Y'));
+                $date30ans=new \DateTime();
+                $date30ans= $date30ans->sub(new \DateInterval('P30Y'));
+                $date40ans=new \DateTime();
+                $date40ans= $date40ans->sub(new \DateInterval('P40Y'));
+                $date50ans=new \DateTime();
+                $date50ans= $date50ans->sub(new \DateInterval('P50Y'));
+                $date60ans=new \DateTime();
+                $date60ans= $date60ans->sub(new \DateInterval('P60Y'));
+                $date70ans=new \DateTime();
+                $date70ans= $date70ans->sub(new \DateInterval('P70Y'));
+                $date80ans=new \DateTime();
+                $date80ans= $date80ans->sub(new \DateInterval('P80Y'));
+                $date90ans=new \DateTime();
+                $date90ans= $date90ans->sub(new \DateInterval('P90Y'));
+                $date100ans=new \DateTime();
+                $date100ans= $date100ans->sub(new \DateInterval('P100Y'));
+
                 $maStat->setMoins10(100*(DB::table('personne')
                         ->where('Nationalite', $nationalite)
                         ->where('Etat', 'Mort')
-                        ->where('DateNaissance', '>', $date10ans )
+                        ->where('DateNaissance', '>', '2009-06-16' )
                         ->count())
                     / $nbPersonne);
                 $maStat->setDe10a20(100*((DB::table('personne')
                         ->where('Nationalite', $nationalite)
                         ->where('Etat', 'Mort')
-                        ->where('DateNaissance', '>', $date20ans )
-                        ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date10ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '>', $date20ans )
+                            ->where('DateNaissance', '<', $date10ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe20a30(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date30ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date20ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date20ans)
+                            ->count())
+                    / $nbPersonne));
                 $maStat->setDe30a40(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date40ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date30ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date30ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe40a50(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date50ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date40ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date40ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe50a60(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date60ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date50ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date50ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe60a70(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date70ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date60ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date60ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe70a80(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date80ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date70ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date70ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe80a90(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date90ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date80ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date80ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setDe90a100(100*((DB::table('personne')
                             ->where('Nationalite', $nationalite)
                             ->where('Etat', 'Mort')
                             ->where('DateNaissance', '>', $date100ans )
-                            ->count())-(DB::table('personne')
-                            ->where('Nationalite', $nationalite)
-                            ->where('Etat', 'Mort')
-                            ->where('DateNaissance', '>', $date90ans )
-                            ->count()))
-                    / $nbPersonne);
+                            ->where('DateNaissance', '<', $date90ans)
+                            ->count())
+                        / $nbPersonne));
                 $maStat->setPlus100(100*(DB::table('personne')
                         ->where('Nationalite', $nationalite)
                         ->where('Etat', 'Mort')
